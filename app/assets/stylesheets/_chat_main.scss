@@ -1,6 +1,7 @@
-.header {
+.chat__header {
   box-sizing: border-box;
   height: 110px;
+  width: calc(100vw - 300px);
   border: #eeeeee;
   padding-top: 35px;
   display: flex;
@@ -12,35 +13,32 @@
   &__member {
     font-size: 12px;
     color: #999999;
-   
   }
   &__edit-btn {
-    
     background-color: #ffffff;
-    border: 1px solid ;
     height: 40px;
     text-align: center;
     line-height: 40px;
     margin-left: auto;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
   }
   
 }
 
-.main {
+.chat__main {
   box-sizing: border-box;
+  width: calc(100vw - 300px);
   background-color: #fafafa;
   padding: 46px 0 0 40px;
   display: flex;
-
-  &__name {
+  &__box__name {
     font-size: 16px;
     font-weight: bold;
     color: #434A54;
     padding-right: 10px;
 
   }
-  &__time {
+  &__box__time {
     font-size: 12px;
     color: #999999;
 
