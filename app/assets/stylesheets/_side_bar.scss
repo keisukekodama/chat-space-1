@@ -1,0 +1,36 @@
+.top {
+  height: 110px;
+  width: 300px;
+  background-color: #253141;
+  padding: 0 20px 0 20px;
+  display: flex;
+  
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffff;
+  }
+  &__icon {
+    margin-left: auto;
+  }
+}
+
+
+
+.group {
+  width: 300px;
+  background-color: #2f3e51;
+  padding: 20px 20px 40px 20px;
+  
+  &__name {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffff;
+  }
+  &__message {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffff;    
+  }
+}
+
