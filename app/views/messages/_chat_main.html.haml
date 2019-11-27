@@ -17,10 +17,10 @@
   .chat__form
     .chat__form__box
       .chat__form__box__contents
-        %input.chat__form__box__contents__new--message{:name => "message", :placeholder => "type a message", :type => "text", :value =>""}/
+        %input{name: "message", placeholder: "type a message", type: "text", value: "", class:"chat__form__box__contents__new--message"}
         %label{class: "chat__form__box__contents__new--image"}
           =icon('fas', 'image')
           %input{type: "file", class: "chat__form__box__contents__file--input"}
       .chat__form__box__btn
-        %input.chat__form__box__btn--send{:name => "commit", :type => "submit", :value => "Send"}
+        %input{name: "commit", type: "submit", value: "Send", class: "chat__form__box__btn--send"}
     
