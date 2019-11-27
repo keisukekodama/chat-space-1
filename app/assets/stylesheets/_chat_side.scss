@@ -1,12 +1,13 @@
 .side__bar {
   float: left;
+  width: 300px;
 }
 
 .chat__top {
-  height: 110px;
-  width: 300px;
+  height: 100px;
   background-color: #253141;
   padding: 0 20px 0 20px;
+  align-items: center;
   display: flex;
   &__name {
     font-size: 16px;
@@ -16,23 +17,28 @@
   &__icon {
     margin-left: auto;
   }
+  .fa-edit {
+    color: white;
+  }
+  .fa-cog {
+    color: white;
+  }
 }
-
-
-
-.chat__group {
-  width: 300px;
+.chat__groups{
+  height: calc(100vh - 100px);
   background-color: #2f3e51;
-  padding: 20px 20px 40px 20px;
-  &__name {
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffff;
-  }
-  &__message {
-    font-size: 11px;
-    font-weight: bold;
-    color: #ffff;    
+  .chat__group {
+    padding: 20px 20px 40px 20px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffff;
+      padding-bottom: 5px;
+    }
+    &__message {
+      font-size: 11px;
+      font-weight: bold;
+      color: #ffff;    
+    }
   }
 }
-
