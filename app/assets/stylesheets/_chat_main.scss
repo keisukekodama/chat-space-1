@@ -1,3 +1,5 @@
+@import 'variable';
+
 .chat__main {
   width: calc(100vw - 300px);
   .chat__header {
@@ -17,30 +19,30 @@
       padding-top: 15px;
     }
     &__edit-btn {
-      background-color: #ffffff;
+      background-color: $white;
       height: 40px;
       text-align: center;
       line-height: 40px;
       margin-left: auto;
       padding: 0 20px;
-      border: solid 1px #38aef0;
-      color: #38aef0;
+      border: solid 1px $blue;
+      color: $blue;
       margin-top: 28px;
     }
     
   }
-  &__contents {
+  .chat__contents {
     height: calc(100vh - 190px);
     box-sizing: border-box;
     background-color: #fafafa;
     padding: 46px 0 0 40px;
-    &__nametime {
+    &__member {
       display: flex;
     }
     &__name {
       font-size: 16px;
       font-weight: bold;
-      color: #434A54;
+      color: $grey;
       padding-right: 10px;
     }
     &__time {
@@ -50,11 +52,11 @@
     }
     &__message {
       font-size: 14px;
-      color: #434A54;
+      color: $grey;
     }
   }
   
-  &__form {
+  .chat__form {
     background-color: #ddd;
     box-sizing: border-box;
     height: 90px;
@@ -69,7 +71,7 @@
           width: 95%;
           height: 50px;
           font-size: 16px;
-          color: #434A54;
+          color: $grey;
           padding: 0  40px 0 10px;
           border-style: none;
         }
@@ -85,8 +87,8 @@
       &__btn--send {
         width: 100px;
         height: 50px;
-        background-color: #38aef0;
-        color: white;
+        background-color: $blue;
+        color: $white;
         padding: 0 30px;
         margin-left: 15px; 
       }

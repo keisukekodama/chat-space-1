@@ -6,21 +6,21 @@
         Member:
     .chat__header__edit-btn
       Edit
-  .chat__main__contents
-    .chat__main__contents__nametime
-      .chat__main__contents__name
+  .chat__contents
+    .chat__contents__member
+      .chat__contents__name
         name
-      .chat__main__contents__time
+      .chat__contents__time
         time
-    .chat__main__message
+    .chat__contents__message
       message
-  .chat__main__form
-    .chat__main__form__box
-      .chat__main__form__box__contents
-        %input.chat__main__form__box__contents__new--message{:name => "message", :placeholder => "type a message", :type => "text", :value =>""}/
-        %label{class: "chat__main__form__box__contents__new--image"}
+  .chat__form
+    .chat__form__box
+      .chat__form__box__contents
+        %input.chat__form__box__contents__new--message{:name => "message", :placeholder => "type a message", :type => "text", :value =>""}/
+        %label{class: "chat__form__box__contents__new--image"}
           =icon('fas', 'image')
-          %input{type: "file", class: "chat__main__form__box__contents__file--input"}
-      .chat__main__form__box__btn
-        %input.chat__main__form__box__btn--send{:name => "commit", :type => "submit", :value => "Send"}
+          %input{type: "file", class: "chat__form__box__contents__file--input"}
+      .chat__form__box__btn
+        %input.chat__form__box__btn--send{:name => "commit", :type => "submit", :value => "Send"}
     
