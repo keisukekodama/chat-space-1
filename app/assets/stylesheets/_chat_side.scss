@@ -1,11 +1,11 @@
-@import 'variable';
+@import 'config/colors';
 
 .side__bar {
   float: left;
   width: 300px;
   .chat__top {
     height: 100px;
-    background-color: #253141;
+    background-color: $side_blue_dark;
     padding: 0 20px 0 20px;
     align-items: center;
     display: flex;
@@ -27,7 +27,7 @@
   
   .chat__groups{
     height: calc(100vh - 100px);
-    background-color: #2f3e51;
+    background-color: $side_blue_light;
     .chat__group {
       padding: 20px 20px 40px 20px;
       &__name {
