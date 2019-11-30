@@ -1,0 +1,48 @@
+@import 'config/colors';
+
+.side__bar {
+  float: left;
+  width: 300px;
+  .chat__top {
+    height: 100px;
+    background-color: $side_blue_dark;
+    padding: 0 20px 0 20px;
+    align-items: center;
+    display: flex;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      color: $white;
+    }
+    &__icon {
+      margin-left: auto;
+    }
+    .fa-edit {
+      color: $white;
+    }
+    .fa-cog {
+      color: $white;
+    }
+  }
+  
+  .chat__groups{
+    height: calc(100vh - 100px);
+    background-color: $side_blue_light;
+    .chat__group {
+      padding: 20px 20px 40px 20px;
+      &__name {
+        font-size: 15px;
+        font-weight: bold;
+        color: $white;
+        padding-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+        font-weight: bold;
+        color: $white;    
+      }
+    }
+  }
+}
+
+

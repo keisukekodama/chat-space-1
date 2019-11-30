@@ -1,0 +1,12 @@
+@import './reset';
+@import "font-awesome-sprockets";
+@import "./font-awesome";
+@import 'chat_side';
+@import 'chat_main';
+@import 'user';
+@import 'config/colors';
+@import 'modules/flash';
+
+.wrapper {
+  display: flex;
+}
