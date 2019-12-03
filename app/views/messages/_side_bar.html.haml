@@ -3,13 +3,17 @@
     .chat__top__name
       = current_user.name
     .chat__top__icon
-      = link_to "#" do
+      = link_to new_group_path do
         = icon('fas', 'edit')
       = link_to edit_user_path(current_user) do
         = icon('fas', 'cog')
   .chat__groups
-    .chat__group
-      .chat__group__name
-        テスト
-      .chat__group__message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .chat__group
+        = link_to group_messages_path(group) do
+          .chat__group__name
+            = group.name
+          .chat__group__message
+            メッセージはまだありません。
+    
+          
