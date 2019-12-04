@@ -1,6 +1,6 @@
 @import 'config/colors';
 
-.chat__main {
+.chat {
   width: calc(100vw - 300px);
   .chat__header {
     box-sizing: border-box;
@@ -55,7 +55,6 @@
       color: $black;
     }
   }
-  
   .chat__form {
     background-color: #ddd;
     box-sizing: border-box;
@@ -68,7 +67,7 @@
         width: 100%;
         background-color: #ffffff;
         &__new--message {
-          width: 100%;
+          width: 94%;
           height: 50px;
           font-size: 16px;
           color: $black;

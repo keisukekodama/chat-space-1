@@ -1,4 +1,4 @@
-.chat__main
+.chat
   .chat__header 
     .chat__header__name
       groups name
@@ -17,10 +17,10 @@
   .chat__form
     .chat__form__box
       .chat__form__box__contents
-        %input{name: "message", placeholder: "type a message", type: "text", value: "", class:"chat__form__box__contents__new--message"}
-        %label{class: "chat__form__box__contents__new--image"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: "chat__form__box__contents__new--message", placeholder: 'type a message'
+        = f.label :image, class: "chat__form__box__contents__new--image" do
           =icon('fas', 'image')
-          %input{type: "file", class: "chat__form__box__contents__file--input"}
+          = f.file_field :image, class: "chat__form__box__contents__file--input"
       .chat__form__box__btn
-        %input{name: "commit", type: "submit", value: "Send", class: "chat__form__box__btn--send"}
-    
+        = f.submit 'Send', class: "chat__form__box__btn--send"
