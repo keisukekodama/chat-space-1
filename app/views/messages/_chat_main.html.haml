@@ -1,26 +1,22 @@
 .chat
   .chat__header 
     .chat__header__name
-      groups name
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          = group.name
       .chat__header__member
-        Member:
+        - @members.each do |member|
+          = member.name
     .chat__header__edit-btn
-      Edit
-  .chat__contents
-    .chat__contents__member
-      .chat__contents__name
-        name
-      .chat__contents__time
-        time
-    .chat__contents__message
-      message
+      = link_to "Edit", edit_group_path(params[:group_id]), method: :get
+  .chat__content
+    = render @messages
   .chat__form
-    .chat__form__box
-      .chat__form__box__contents
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: "chat__form__box__contents__new--message", placeholder: 'type a message'
-        = f.label :image, class: "chat__form__box__contents__new--image" do
-          =icon('fas', 'image')
-          = f.file_field :image, class: "chat__form__box__contents__file--input"
-      .chat__form__box__btn
-        = f.submit 'Send', class: "chat__form__box__btn--send"
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chat__form__message', placeholder: "type a message" 
+      .chat__form__mask
+        = f.label :image, class: 'chat__form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'chat__form__submit'
+        
