@@ -1,6 +1,6 @@
 @import 'config/colors';
 
-.chat__main {
+.chat {
   width: calc(100vw - 300px);
   .chat__header {
     box-sizing: border-box;
@@ -29,69 +29,73 @@
       color: $light_blue;
       margin-top: 28px;
     }
-    
   }
-  .chat__contents {
+
+  .chat__content {
     height: calc(100vh - 190px);
     box-sizing: border-box;
     background-color: #fafafa;
     padding: 46px 0 0 40px;
-    &__member {
-      display: flex;
+    overflow: scroll;
+    .chat__contents{
+      padding-bottom: 40px;
+      &__top {
+        display: flex;
+      }
+      &__name {
+        font-size: 16px;
+        font-weight: bold;
+        color: $black;
+        padding-right: 10px;
+      }
+      &__time {
+        display: flex;
+        font-size: 12px;
+        color: $light_gray;
+      }
+      &__message {
+        font-size: 14px;
+        color: $black;
+      }
     }
-    &__name {
-      font-size: 16px;
-      font-weight: bold;
-      color: $black;
-      padding-right: 10px;
-    }
-    &__time {
-      display: flex;
-      font-size: 12px;
-      color: $light_gray;
-    }
-    &__message {
-      font-size: 14px;
-      color: $black;
-    }
+    
   }
   
   .chat__form {
     background-color: #ddd;
     box-sizing: border-box;
     height: 90px;
-    padding: 20px 40px;
-    &__box {
-      display:flex;
-      &__contents {
-        position: relative;
-        width: 100%;
-        background-color: #ffffff;
-        &__new--message {
-          width: 100%;
-          height: 50px;
-          font-size: 16px;
-          color: $black;
-          margin: 0  40px 0 10px;
-          border-style: none;
-        }
-        &__new--image {
-          position: absolute;
-          top: 13px;
-          right: 10px;
-        }
-        &__file--input {
-          display: none;
-        }
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      box-sizing: border-box;
+      float: left;
+      height: 50px;
+      padding: 0, 10px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
       }
-      &__btn--send {
-        width: 100px;
-        height: 50px;
-        background-color: $light_blue;
-        color: $white;
-        padding: 0 30px;
-        margin-left: 15px; 
+      .hidden {
+        display: none;
       }
+    }
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
   }
 }
