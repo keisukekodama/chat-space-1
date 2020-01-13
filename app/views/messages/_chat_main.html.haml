@@ -2,12 +2,12 @@
   .chat__header 
     .chat__header__name
       - current_user.groups.each do |group|
-        = link_to group_messages_path(group) do
-          = group.name
+        = group.name
       .chat__header__member
+        Member: 
         - @members.each do |member|
           = member.name
-    .chat__header__edit-btn
+    .chat__header__edit
       = link_to "Edit", edit_group_path(params[:group_id]), method: :get
   .chat__content
     = render @messages

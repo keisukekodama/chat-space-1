@@ -18,7 +18,7 @@
       color: $light_gray;
       padding-top: 15px;
     }
-    &__edit-btn {
+    &__edit {
       background-color: $white;
       height: 40px;
       text-align: center;
@@ -26,9 +26,13 @@
       margin-left: auto;
       padding: 0 20px;
       border: solid 1px $light_blue;
-      color: $light_blue;
       margin-top: 28px;
+      a {
+        text-decoration: none;
+        color: $light_blue;
+      }
     }
+   
   }
 
   .chat__content {
