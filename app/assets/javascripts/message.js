@@ -1,45 +1,29 @@
 $(function() {
-    function buildHTML(message) {
-      if ( message.image ) {
-        var html =
-         `<div class="chat__contents" data-message-id=${message.id}>
-            <div class="chat__contents__top">
-              <div class="chat__contents__name">
-                ${message.user_name}
-              </div>
-              <div class="chat__contents__time">
-                ${message.created_at}
-              </div>
-            </div>
-            <div class="chat__contents__message">
-              <p class="chat__contents__message--lower">
-                ${message.content}
-              </p>
-            </div>
-            <img src=${message.image} >
-          </div>`
-        return html;
-      } else {
-        var html =
-          `<div class="chat__contents" data-message-id=${message.id}>
-            <div class="chat__contents__top">
-              <div class="chat__contents__name">
-                ${message.user_name}
-              </div>
-              <div class="chat__contents__time">
-                ${message.created_at}
-              </div>
-            </div>
-            <div class="chat__contents__message">
-              <p class="chat__contents__message--lower">
-                ${message.content}
-              </p>
-            </div>
-          </div>`
-        return html;
-      };
-    }
-
+  var buildHTML = function(message) {
+      var html = `<div class="chat__contents" data-message-id=` + message.id + `>` +
+        `<div class="chat__contents__top">` +
+          `<div class="chat__contents__name">` +
+            message.user_name +
+          `</div>` +
+          `<div class="chat__contents__time">` +
+            message.created_at +
+          `</div>` +
+        `</div>` +
+        `<div class="chat__contents__message">` 
+          if (message.content) {
+            html += `<p class="chat__contents__message--lower">` +
+                        message.content +
+                    `</p>` 
+          }
+          if (message.image) {
+            html += `<div class="chat__contents__message">` +
+                      `<img src="` + message.image + `" class="chat__content__message--image" >` +
+                    `</div>` 
+          }
+          html += `</div>` + 
+        `</div>`
+    return html;
+  };
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
