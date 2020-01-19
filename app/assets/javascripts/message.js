@@ -1,6 +1,5 @@
 $(function() {
   var buildHTML = function(message) {
-    if (message.content && message.image) {
       var html = `<div class="chat__contents" data-message-id=` + message.id + `>` +
         `<div class="chat__contents__top">` +
           `<div class="chat__contents__name">` +
@@ -10,44 +9,19 @@ $(function() {
             message.created_at +
           `</div>` +
         `</div>` +
-        `<div class="chat__contents__message">` +
-          `<p class="chat__contents__message--lower">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="chat__content__message--image" >` +
-        `</div>` +
-      `</div>`
-    } else if (message.content) {
-      var html = `<div class="chat__contents" data-message-id=` + message.id + `>` +
-        `<div class="chat__contents__top">` +
-          `<div class="chat__contents__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="chat__contents__time">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="chat__contents__message">` +
-          `<p class="chat__contents__message--lower">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
-    } else if (message.image) {
-      var html = `<div class="chat__contents" data-message-id=` + message.id + `>` +
-        `<div class="chat__contents__top">` +
-          `<div class="chat__contents__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="chat__contents__time">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="chat__contents__message">` +
-          `<img src="` + message.image + `" class="chat__content__message--image" >` +
-        `</div>` +
-      `</div>`
-    };
+        `<div class="chat__contents__message">` 
+          if (message.content) {
+            html += `<p class="chat__contents__message--lower">` +
+                        message.content +
+                    `</p>` 
+          }
+          if (message.image) {
+            html += `<div class="chat__contents__message">` +
+                      `<img src="` + message.image + `" class="chat__content__message--image" >` +
+                    `</div>` 
+          }
+          html += `</div>` + 
+        `</div>`
     return html;
   };
 
