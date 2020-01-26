@@ -19,8 +19,8 @@ $(function() {
           if (message.image) {
             html += `<img src="${message.image}" class="chat__content__message--image" >`
           }
-          html += `</div>`
-        return html;
+          html += `</div></div>`
+          return html;
   };
     
   $('#new_message').on('submit', function(e){
