@@ -1,30 +1,26 @@
 $(function() {
   var buildHTML = function(message) {
-      var html = `<div class="chat__contents" data-message-id=` + message.id + `>` +
-        `<div class="chat__contents__top">` +
-          `<div class="chat__contents__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="chat__contents__time">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="chat__contents__message">` 
-          if (message.content) {
-            html += `<p class="chat__contents__message--lower">` +
-                        message.content +
-                    `</p>` 
-          }
-          if (message.image) {
-            html += `<div class="chat__contents__message">` +
-                      `<img src="` + message.image + `" class="chat__content__message--image" >` +
-                    `</div>` 
-          }
-          html += `</div>` + 
-        `</div>`
+    var html = `<div class="chat__contents" data-message-id="${message.id}">
+      <div class="chat__contents__top">
+        <div class="chat__contents__name">
+          ${message.user_name}
+        </div>
+        <div class="chat__contents__time">
+          ${message.created_at}
+        </div>
+      </div>
+      <div class="chat__contents__message">`
+        if (message.content) {
+          html += `<p class="chat__contents__message--lower">
+                    ${message.content}
+                  </p>`
+        }
+        if (message.image) {
+          html += `<img src="${message.image}" class="chat__content__message--image" >`
+        }
+      html += `</div></div>`
     return html;
   };
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -64,12 +60,10 @@ $(function() {
         });
         $('.chat__content').append(insertHTML);
         $('.chat__content').animate({ scrollTop: $('.chat__content')[0].scrollHeight});
-        $("#new_message")[0].reset();
-        $(".chat__form__submit").prop("disabled", false);
        }
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
       });
    };
    if (document.location.href.match(/\/groups\/\d+\/messages/)) {
